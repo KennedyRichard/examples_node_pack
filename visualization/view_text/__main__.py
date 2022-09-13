@@ -479,6 +479,11 @@ class TextViewer:
     view_text.dismiss_exec_time_tracking = True
 
 
-### finally, we just need to instantiate the TextViewer
-### and use the view_text method as the main callable
+### instantiate the TextViewer and use the view_text
+### method as the main callable
 main_callable = TextViewer().view_text
+
+### also make sure it can be found in this module using
+### its own name, so that it can be found when the node
+### layout is exported as a Python script
+view_text = main_callable
