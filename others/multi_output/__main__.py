@@ -1,6 +1,6 @@
 """Facility for multi output testing building."""
 
-from collections.abc import Iterable, Iterator
+from collections.abc import Callable, Iterable, Iterator
 
 def multi_output() -> [
     
@@ -18,6 +18,9 @@ def multi_output() -> [
       # specifying type is optional, though; this output
       # has no type specified
       {"name": "type_not_specified"},
+
+      # and this is yet another possible annotation
+      {"name": "callable_obj", "type": Callable},
       
     ]:
     """Gather arguments on dict and return."""
@@ -31,7 +34,8 @@ def multi_output() -> [
       "iterable" : set(),
       "iterator" : [1, 2, 3].__iter__(),
       "other": range(2),
-      "type_not_specified": None
+      "type_not_specified": None,
+      "callable_obj": lambda: None,
     }
     return d
 

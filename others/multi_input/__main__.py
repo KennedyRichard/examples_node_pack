@@ -1,6 +1,6 @@
 """Facility for simple node test."""
 
-from collections.abc import Iterable, Iterator
+from collections.abc import Callable, Iterable, Iterator
 
 def multi_input(
     a_list               : list,
@@ -14,6 +14,7 @@ def multi_input(
     iterator             : Iterator,
     other_type           : range,
     type_not_specified,
+    callable_obj         : Callable
     ):
     """Print obj, then return it."""
     pass
